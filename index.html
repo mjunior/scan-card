@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,93 +8,43 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
-  
+
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
     crossorigin="anonymous">
-  
+
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
-  
+
   <title>Document</title>
 </head>
+
 <body>
-<div class="container">
-<div class="row">
-
-  <div class="col-xs-12 col-sm-6 first-step">
-    <div class="box-form-credit-card">
-      <div class="form-group has-error has-danger">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-invalid is-upgraded" data-upgraded=",MaterialTextfield">
-          <input type="text" name="card.number" id="cardNumber" class="mdl-textfield__input" data-validate-credit-card-brand="true"
-            data-required-error="Este campo é obrigatório." onkeypress="enter('cardName');" required="" maxlength="24" autocomplete="off">
-          <label for="cardNumber" class="mdl-textfield__label">Número do cartão</label>
-          <img class="cardBrandImage" id="cardBrandImage" src="/images/creditcard/none.jpg">
-        </div>
-        <div class="help-block with-errors">
-          <ul class="list-unstyled">
-            <li>Este campo é obrigatório.</li>
-          </ul>
-        </div>
-      </div>
-  
-      <div class="form-group">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-invalid is-upgraded" data-upgraded=",MaterialTextfield">
-          <input type="text" name="card.holderName" id="cardName" class="mdl-textfield__input" data-required-error="Este campo é obrigatório."
-            onkeypress="enter('cardExpiryMonth');" required="">
-          <label for="cardName" class="mdl-textfield__label">Nome do titular do cartão</label>
-        </div>
-        <div class="help-block with-errors"></div>
-      </div>
-  
-      <div class="form-inline row">
-        <div class="label" style="padding-left: 15px;">Válido até:</div>
-        <div class="form-group col-xs-4">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label field-small is-invalid is-upgraded" data-upgraded=",MaterialTextfield">
-            <input type="text" name="card.expiryMonth" class="cardExpMonth mdl-textfield__input" id="cardExpiryMonth" data-required-error="Este campo é obrigatório."
-              maxlength="2" data-constraint="numeric" onkeypress="enter('cardExpYear');" required="">
-            <label for="cardExpiryMonth" class="mdl-textfield__label">Mês</label>
+  <div class="container">
+    <div class="row">
+      <h3>Scan card - Try on mobile</h3>
+      <div class="col-xs-12">
+        <fieldset>
+          <legend>Payment</legend>
+          <label for="frmNameCC">Name on card</label> <br>
+          <input name="ccname" id="frmNameCC" required="" placeholder="Full Name" autocomplete="cc-name"><br><br>
+          <label for="frmCCNum">Card Number</label><br>
+          <input name="cardnumber" id="frmCCNum" required="" autocomplete="cc-number"><br><br>
+          <label for="frmCCExp">Expiry</label><br>
+          <input name="cc-exp" id="frmCCExp" required="" placeholder="MM-YYYY" autocomplete="cc-exp"><br><br>
+          <label for="frmCCCVC">CVC</label>
+          <br>
+          <input name="cvc" id="frmCCCVC" required="" autocomplete="cc-csc">
+          <br>
+          <br>
+          <div>
+            <button class="btn" id="butCheckout">Check Out</button>
           </div>
-          <div class="help-block with-errors"></div>
-        </div>
-        <div class="form-group col-xs-4">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label field-small is-invalid is-upgraded" data-upgraded=",MaterialTextfield">
-            <input type="text" name="card.expiryYear" class="cardExpYear mdl-textfield__input" id="cardExpYear" data-required-error="Este campo é obrigatório."
-              maxlength="4" data-constraint="numeric" onkeypress="enter('cardCcv');" required="">
-            <label for="cardExpYear" class="mdl-textfield__label">Ano</label>
-          </div>
-          <div class="help-block with-errors"></div>
-        </div>
+        </fieldset>
       </div>
-  
-      <div class="form-group">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-invalid is-upgraded" data-upgraded=",MaterialTextfield">
-          <div class="icon-credit-card icoCCV" title="Código de segurança"></div>
-          <input type="text" name="card.ccv" class="cardCcv mdl-textfield__input" id="cardCcv" data-constraint="numeric" data-required-error="Este campo é obrigatório."
-            onkeypress="enter('cpfCnpj');" maxlength="4" required="">
-          <label for="cardCcv" class="mdl-textfield__label">Código de segurança</label>
-        </div>
-        <div class="help-block with-errors"></div>
-      </div>
-  
-  
-  
-      <input type="hidden" name="id" value="345919942195">
-  
-  
     </div>
-  
-  
-    <button type="button" id="next-step" class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" title="Continuar"
-      data-upgraded=",MaterialButton">CONTINUAR</button>
-  
   </div>
-
-
-</div>  
-
-</div>  
 </body>
-</html>
 
+</html>
